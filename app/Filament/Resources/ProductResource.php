@@ -31,14 +31,18 @@ class ProductResource extends Resource
 
                 Forms\Components\TextInput::make('name')
                 ->required(),
-                Forms\Components\TextInput::make('price')
-                ->required()
-                ->numeric(),
+                Forms\Components\Select::make('status')
+                ->options([
+                'ready' => 'Ready',
+                'sold-out' => 'Sold Out',
+                ])
+                ->required(),
                 Forms\Components\Textarea::make('description')
                 ->required()
                 ->columnSpan(2),
-                Forms\Components\Toggle::make('status')
-                ->required(),
+                Forms\Components\TextInput::make('price')
+                ->required()
+                ->numeric(),
                 // Forms\Components\TextInput::make('sold')
                 // ->required(),
                 Forms\Components\Select::make('category_id')
