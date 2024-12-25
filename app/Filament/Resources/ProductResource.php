@@ -41,7 +41,7 @@ class ProductResource extends Resource
                 ->required(),
                 // Forms\Components\TextInput::make('sold')
                 // ->required(),
-                Forms\Components\TextInput::make('category_id')
+                Forms\Components\Select::make('category_id')
                 ->relationship('category', 'name')
                 ->required(),
                 
