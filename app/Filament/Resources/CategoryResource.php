@@ -26,10 +26,6 @@ class CategoryResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                 ->required(),
-                Forms\Components\TextInput::make('name')
-                ->required(),
-                Forms\Components\TextInput::make('name')
-                ->required(),
                 
                 Forms\Components\FileUpload::make('icon')
                 ->image()
