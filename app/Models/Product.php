@@ -23,6 +23,12 @@ class Product extends Model
         'category_id',
     ];
 
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = $value;
+        $this->attributes['slug'] = str($value)->lower()->slug();
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id');

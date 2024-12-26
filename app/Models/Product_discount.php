@@ -16,12 +16,6 @@ class Product_discount extends Model
         'discount_id',
     ];
 
-    public function setNameAttribute($value)
-    {
-        $this->attributes['name'] = $value;
-        $this->attributes['slug'] = str($value)->lower()->slug();
-    }
-
     public function discount(): BelongsTo
     {
         return $this->belongsTo(Discount::class, 'discount_id');

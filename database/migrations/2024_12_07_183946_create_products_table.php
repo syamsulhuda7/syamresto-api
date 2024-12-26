@@ -18,8 +18,8 @@ return new class extends Migration
             $table->text('description');
             $table->string('image_url');
             $table->integer('price');
-            $table->string('status')->default('in stock');
-            $table->integer('sold');
+            $table->string('status');
+            $table->integer('sold')->nullable();
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
