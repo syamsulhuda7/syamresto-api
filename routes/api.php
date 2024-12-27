@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CarouselController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ProductController;
 use App\Models\Product;
@@ -19,3 +20,5 @@ Route::apiResource('/categories', CategoryController::class);
 
 Route::get('/product/{product:slug}', [ProductController::class, 'show']);
 Route::apiResource('/products', ProductController::class);
+
+Route::apiResource('/carousels', CarouselController::class);
