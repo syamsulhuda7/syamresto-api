@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\CarouselController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\ProfileController;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,5 @@ Route::get('/product/{product:slug}', [ProductController::class, 'show']);
 Route::apiResource('/products', ProductController::class);
 
 Route::apiResource('/carousels', CarouselController::class);
+
+Route::apiResource('/profiles', ProfileController::class);
