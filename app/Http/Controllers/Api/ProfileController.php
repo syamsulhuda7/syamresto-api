@@ -11,7 +11,7 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $carousels = Profile::get();
-        return ProfileResource::collection($carousels);
+        $profiles = Profile::where('status', 'active')->get();
+        return ProfileResource::collection($profiles);
     }
 }

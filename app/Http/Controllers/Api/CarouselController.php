@@ -11,7 +11,7 @@ class CarouselController extends Controller
 {
     public function index()
     {
-        $carousels = Carousel::get();
+        $carousels = Carousel::where('status', 'active')->get();
         return CarouselResource::collection($carousels);
     }
 }
