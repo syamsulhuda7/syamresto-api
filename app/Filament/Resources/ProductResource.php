@@ -59,13 +59,16 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('price'),
                 Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\TextColumn::make('category.name'),
 
                 Tables\Columns\ImageColumn::make('image_url')
                 ->label('Image')
                 ->circular(),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('category_id')
+                ->label('Category')
+                ->relationship('category', 'name'),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
